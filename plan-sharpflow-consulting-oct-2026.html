@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sharpflow Google Ads Plan</title>
+<style>
+:root{--navy:#0b1f36;--card:#12355b;--blue:#0f4c81;--gold:#c8a24a;--gold-l:#e3c77f;--bg:#e9eff6;--white:#ffffff;--red:#b3261e;--green:#1f6f43;--text:#1a2433;--muted:#5a6778}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+h2{font-size:28px;line-height:1.25;margin-bottom:14px}
+h3{font-size:18px;line-height:1.35;margin-bottom:8px}
+p{margin-bottom:12px}
+strong{font-weight:700}
+.num{display:inline-block;color:var(--blue);font-weight:800;font-size:14px;letter-spacing:.08em;margin-bottom:8px}
+.hl{background:var(--gold);color:var(--navy);padding:0 4px;font-weight:700}
+/* hero */
+.hero{background:var(--navy);color:#fff;border-bottom:6px solid var(--gold);padding:28px 0 56px}
+.top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:#b8c6d8;border-bottom:1px solid #1f3d63;padding-bottom:14px;margin-bottom:40px}
+.label{color:var(--gold-l);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.hero h1{font-size:44px;line-height:1.1;margin:10px 0 14px}
+.hero .lead{font-size:20px;max-width:760px;color:#dbe4ef}
+.hero .lead b{color:var(--gold-l)}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin:22px 0 34px;font-size:14px;color:#b8c6d8}
+.meta span b{color:#fff}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kpi{background:var(--card);border-radius:10px;padding:20px}
+.kpi .v{font-size:34px;font-weight:800;color:var(--gold-l);line-height:1.1}
+.kpi .k{font-size:14px;color:#cfdae7;margin-top:6px}
+/* findings */
+.light{background:var(--bg)}
+.white{background:var(--white)}
+.intro{max-width:780px;font-size:17px;margin-bottom:28px}
+.find{background:#fff;border-radius:10px;box-shadow:0 4px 18px rgba(11,31,54,.08);padding:24px;margin-bottom:22px;border-left:6px solid var(--blue)}
+.find.med{border-left-color:var(--gold)}
+.fhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.tag{font-size:12px;font-weight:700;letter-spacing:.06em;padding:3px 10px;border-radius:20px;color:#fff;background:var(--blue);white-space:nowrap}
+.tag.m{background:var(--gold);color:var(--navy)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.col{border-radius:8px;padding:16px;font-size:14px}
+.col.bad{background:#fbecea;border:1px solid #efc6c2}
+.col.good{background:#e7f3ec;border:1px solid #bcdcc8}
+.col h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.col.bad h4{color:var(--red)}
+.col.good h4{color:var(--green)}
+.col ul{list-style:none}
+.col li{padding:5px 0;border-bottom:1px dashed rgba(0,0,0,.08)}
+.col li:last-child{border-bottom:0}
+table{width:100%;border-collapse:collapse;margin-top:16px;font-size:14px}
+th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600}
+td{padding:10px 12px;border-bottom:1px solid #e1e7ef;vertical-align:top}
+.tbl{overflow-x:auto}
+.y{color:var(--green);font-weight:700}
+.n{color:var(--red);font-weight:700}
+.flow{display:flex;align-items:stretch;gap:10px;margin-top:16px;flex-wrap:wrap}
+.node{flex:1;min-width:150px;border-radius:8px;padding:14px;font-size:14px}
+.node.from{background:#fbecea;border:1px solid #efc6c2}
+.node.to{background:#e7f3ec;border:1px solid #bcdcc8}
+.arrow{display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--blue);font-size:22px}
+.node b{display:block;margin-bottom:4px}
+/* timeline */
+.tl{background:var(--navy);border-radius:12px;padding:26px;color:#fff;margin:24px 0 30px}
+.tl h3{color:var(--gold-l);font-size:15px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:center;margin-bottom:12px;font-size:14px}
+.track{position:relative;height:30px;background:#1a3a5f;border-radius:6px}
+.bar{position:absolute;top:0;height:30px;background:var(--gold);border-radius:6px;color:var(--navy);font-weight:700;font-size:13px;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.steps{display:grid;gap:16px}
+.step{display:grid;grid-template-columns:52px 1fr;gap:16px;background:var(--bg);border-radius:10px;padding:20px}
+.sn{width:52px;height:52px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center}
+.step p{margin-bottom:6px;font-size:15px}
+.why{font-size:14px;color:var(--muted)}
+.why b{color:var(--blue)}
+.budget{margin-top:26px;background:#fff;border:2px solid var(--gold);border-radius:10px;padding:22px}
+.budget .v{font-size:30px;font-weight:800;color:var(--navy)}
+/* results */
+.dark{background:var(--navy);color:#fff}
+.dark .num{color:var(--gold-l)}
+.dark .intro{color:#cfdae7}
+.res{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rc{background:var(--card);border-radius:10px;padding:22px}
+.rc .ind{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#9fb3ca;margin-bottom:6px}
+.rc .big{font-size:38px;font-weight:800;color:var(--gold-l);line-height:1.1}
+.rc .cap{font-size:14px;color:#dbe4ef;margin:6px 0 16px}
+.bl{font-size:13px;color:#b8c6d8;margin-bottom:4px;display:flex;justify-content:space-between}
+.bt{height:12px;background:#0b2a4a;border-radius:6px;margin-bottom:12px}
+.bf{height:12px;background:var(--gold);border-radius:6px}
+.bf.dim{background:#5f7898}
+.note{margin-top:24px;font-size:14px;color:#b8c6d8;max-width:820px}
+/* next */
+.next{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.nc{background:#fff;border-top:5px solid var(--gold);border-radius:10px;padding:22px;box-shadow:0 4px 18px rgba(11,31,54,.06)}
+.nc .s{font-size:13px;color:var(--blue);font-weight:800;letter-spacing:.08em;margin-bottom:6px}
+.nc p{font-size:15px;margin:0}
+.cta{background:var(--gold);color:var(--navy);text-align:center;padding:48px 0}
+.cta h2{margin-bottom:8px}
+.cta p{font-size:18px;margin:0}
+footer{background:var(--navy);color:#cfdae7;text-align:center;padding:26px 0;font-size:14px}
+footer b{color:#fff}
+@media(max-width:820px){
+ .kpis,.res,.next{grid-template-columns:1fr}
+ .cmp{grid-template-columns:1fr}
+ .hero h1{font-size:34px}
+ h2{font-size:24px}
+ section{padding:48px 0}
+ .arrow{width:100%;transform:rotate(90deg);height:24px}
+}
+@media(max-width:420px){
+ .wrap{padding:0 16px}
+ .hero h1{font-size:30px}
+ .hero .lead{font-size:17px}
+ .row{grid-template-columns:1fr;gap:4px}
+ .step{grid-template-columns:1fr}
+ .tl{padding:18px}
+ .find{padding:18px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+ <div class="wrap">
+  <div class="top"><span>Google Ads launch plan, US B2B search</span><span>9 October 2026</span></div>
+  <div class="label">30 day plan prepared for</div>
+  <h1>Sharpflow Consulting</h1>
+  <p class="lead">A Google Ads channel built to deliver <b>qualified sales calls with senior US decision makers</b>, not cheap clicks or form fills.</p>
+  <div class="meta">
+   <span>Market: <b>United States</b></span>
+   <span>Channel: <b>Google Search</b></span>
+   <span>Success measure: <b>Qualified sales calls</b></span>
+  </div>
+  <div class="kpis">
+   <div class="kpi"><div class="v">3</div><div class="k">High intent keyword clusters to launch with, each with its own budget and cost per call ceiling</div></div>
+   <div class="kpi"><div class="v">34</div><div class="k">Five star partner directory reviews ready to use as trust proof in ads and on the landing page</div></div>
+   <div class="kpi"><div class="v">1</div><div class="k">Conversion that bidding optimises toward: a qualified call confirmed in your CRM</div></div>
+  </div>
+ </div>
+</header>
+
+<section class="light">
+ <div class="wrap">
+  <div class="num">01</div>
+  <h2>What we found</h2>
+  <p class="intro">Sharpflow already has what most consultancies are missing before a paid launch: a Diamond tier ClickUp partner listing, enterprise client logos and a clear discovery call offer. The risk is not the offer. It is that <span class="hl">Google will happily spend your budget on ClickUp users who will never buy consulting</span> unless the account is built to filter them out from day one.</p>
+
+  <div class="find">
+   <div class="fhead"><h3>Most "ClickUp" searches come from DIY users, not buyers</h3><span class="tag">High impact</span></div>
+   <p>ClickUp is a large consumer and SMB product, so the bulk of search volume around its name is support, login, pricing and template intent. Broad or loosely matched keywords will fill the account with clicks from people trying to use the tool, not hire someone to build it. <strong>Exact and phrase match, plus a negative list built before launch, decide whether the budget reaches a COO or a freelancer.</strong></p>
+   <div class="cmp">
+    <div class="col bad"><h4>Block before launch</h4>
+     <ul><li>clickup login, clickup app download</li><li>clickup free plan, clickup pricing</li><li>clickup templates, clickup tutorial</li><li>clickup jobs, clickup certification</li><li>clickup alternatives, clickup vs notion (DIY research)</li></ul></div>
+    <div class="col good"><h4>Target from day one</h4>
+     <ul><li>clickup consultant, clickup implementation partner</li><li>clickup implementation services, clickup onboarding services</li><li>migrate asana to clickup, monday to clickup migration</li><li>jira to clickup migration for teams</li><li>clickup enterprise setup, clickup workflow automation consultant</li></ul></div>
+   </div>
+  </div>
+
+  <div class="find">
+   <div class="fhead"><h3>The number that matters sits outside Google Ads today</h3><span class="tag">High impact</span></div>
+   <p>Google Tag Manager is already installed on sharpflowconsulting.com, so tracking can be added without touching the site build. The gap is further down the funnel. A booked discovery call is not a qualified opportunity, and <strong>if Google only ever sees form fills, it will optimise toward whoever fills forms most cheaply.</strong> The fix is sending the qualified call stage from your CRM back into Google Ads.</p>
+   <div class="tbl"><table>
+    <tr><th>Funnel stage</th><th>Tracked for bidding</th><th>Plan</th></tr>
+    <tr><td>Ad click</td><td class="y">Yes</td><td>Standard Google Ads tag via existing GTM</td></tr>
+    <tr><td>Discovery call booked</td><td class="y">Yes, secondary</td><td>Recorded, but not used as the bidding goal</td></tr>
+    <tr><td>Qualified call (right role, right size)</td><td class="n">Needs adding</td><td>Offline conversion import from CRM, primary bidding goal</td></tr>
+    <tr><td>Proposal sent / deal won</td><td class="n">Needs adding</td><td>Offline import with deal value, used for reporting and later value based bidding</td></tr>
+   </table></div>
+  </div>
+
+  <div class="find med">
+   <div class="fhead"><h3>Paid traffic needs a page written for senior buyers</h3><span class="tag m">Medium impact</span></div>
+   <p>The homepage speaks to teams of five or more who feel ClickUp is messy. That works for organic visitors. A CEO or IT Director clicking a paid ad needs a single page answering three things fast: what an implementation covers, who it is for, and why Sharpflow. <strong>One focused landing page with a qualifying form will lift call quality more than any bid change.</strong></p>
+   <div class="flow">
+    <div class="node from"><b>Today</b>Homepage and general discovery call page, written for all audiences</div>
+    <div class="arrow">&#8594;</div>
+    <div class="node to"><b>For paid search</b>One implementation landing page: enterprise logos, partner tier, reviews, packages, and a form asking role, team size and timeline</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="white">
+ <div class="wrap">
+  <div class="num">02</div>
+  <h2>The 30 day plan</h2>
+  <div class="tl">
+   <h3>Weeks 1 to 4</h3>
+   <div class="row"><span>Week 1</span><div class="track"><div class="bar" style="left:0;width:25%">Tracking</div></div></div>
+   <div class="row"><span>Week 2</span><div class="track"><div class="bar" style="left:25%;width:25%">Build</div></div></div>
+   <div class="row"><span>Week 3</span><div class="track"><div class="bar" style="left:50%;width:25%">Page and ads</div></div></div>
+   <div class="row"><span>Week 4</span><div class="track"><div class="bar" style="left:75%;width:25%">Optimise</div></div></div>
+  </div>
+
+  <div class="steps">
+   <div class="step"><div class="sn">1</div><div>
+    <h3>Week 1: Tracking and qualification first</h3>
+    <p>Add role, company size and timeline fields to the discovery call form. Set up enhanced conversions, record booked calls as a secondary action, and create a "qualified call" stage in your CRM that uploads back to Google Ads as the primary conversion.</p>
+    <p class="why"><b>Why:</b> Google learns from whatever you tell it is a success. Telling it a qualified call is success is the whole difference between leads and opportunities.</p>
+   </div></div>
+   <div class="step"><div class="sn">2</div><div>
+    <h3>Week 2: Build three US Search campaigns</h3>
+    <p>Campaign one: ClickUp implementation and consultant terms. Campaign two: migration terms from Asana, Monday and Jira. Campaign three: operations and workflow automation consulting, on a smaller test budget. Exact and phrase match only, US presence targeting, weekday business hours, and the full negative list live from the first day.</p>
+    <p class="why"><b>Why:</b> Separate campaigns mean each intent gets its own budget, so a cheap but low quality cluster can never starve the one producing calls.</p>
+   </div></div>
+   <div class="step"><div class="sn">3</div><div>
+    <h3>Week 3: Landing page and qualifying ad copy</h3>
+    <p>Brief and review a dedicated implementation page. Write ads that state who the service is for, such as teams of 20 or more and structured implementation packages, so smaller teams self filter before they click.</p>
+    <p class="why"><b>Why:</b> Every click that reads "not for us" in the ad and skips is budget saved for a buyer.</p>
+   </div></div>
+   <div class="step"><div class="sn">4</div><div>
+    <h3>Week 4: Optimise on lead quality, not volume</h3>
+    <p>Twice weekly search term reviews, budget moved toward the cluster producing qualified calls, and a weekly report showing qualified calls, booked meetings and cost per qualified call. Once qualified call volume allows, bidding moves to Maximise Conversions on that action only.</p>
+    <p class="why"><b>Why:</b> Smart bidding needs clean, consistent signal. Switching it on before then wastes the first months of data.</p>
+   </div></div>
+  </div>
+
+  <div class="budget">
+   <div class="label" style="color:var(--blue)">Recommended starting budget</div>
+   <div class="v">$3,000 a month for the first 90 days</div>
+   <p style="margin:6px 0 0">Enough for three focused campaigns to gather clean data at US B2B click prices. Scale once cost per qualified call is known and stable, not before.</p>
+  </div>
+ </div>
+</section>
+
+<section class="dark">
+ <div class="wrap">
+  <div class="num">03</div>
+  <h2>Comparable results</h2>
+  <p class="intro">Consultation led, high ticket accounts where a booked consultation was the only number that counted, and where tracking was rebuilt so bidding learned from real bookings instead of soft signals.</p>
+  <div class="res">
+   <div class="rc">
+    <div class="ind">Cosmetic surgery clinic, USD</div>
+    <div class="big">+140%</div>
+    <div class="cap">Confirmed bookings after bidding moved off micro conversions and onto confirmed bookings</div>
+    <div class="bl"><span>Bookings before</span><span>5</span></div>
+    <div class="bt"><div class="bf dim" style="width:42%"></div></div>
+    <div class="bl"><span>Bookings after</span><span>12</span></div>
+    <div class="bt"><div class="bf" style="width:100%"></div></div>
+    <div class="bl"><span>Cost per conversion</span><span>$99.97 to $46.15</span></div>
+   </div>
+   <div class="rc">
+    <div class="ind">London plastic surgery clinic, GBP</div>
+    <div class="big">0 to 18</div>
+    <div class="cap">Book Appointment conversions in one month after booking flow tracking was launched</div>
+    <div class="bl"><span>Cost per conversion before</span><span>&#163;256.84</span></div>
+    <div class="bt"><div class="bf dim" style="width:100%"></div></div>
+    <div class="bl"><span>Cost per conversion after</span><span>&#163;77.87</span></div>
+    <div class="bt"><div class="bf" style="width:30%"></div></div>
+    <div class="bl"><span>Change</span><span>69.7% reduction</span></div>
+   </div>
+   <div class="rc">
+    <div class="ind">UK sleep clinic, GBP</div>
+    <div class="big">23 to 49</div>
+    <div class="cap">Calls over one minute, more than double, after search terms were tightened to cut unqualified queries</div>
+    <div class="bl"><span>Leads per &#163;100 before</span><span>1.83</span></div>
+    <div class="bt"><div class="bf dim" style="width:67%"></div></div>
+    <div class="bl"><span>Leads per &#163;100 after</span><span>2.73</span></div>
+    <div class="bt"><div class="bf" style="width:100%"></div></div>
+    <div class="bl"><span>Spend</span><span>Essentially flat</span></div>
+   </div>
+  </div>
+  <p class="note">Same principle for Sharpflow: count only the conversations that matter, filter the rest out at the keyword and ad level, and let budget follow quality.</p>
+ </div>
+</section>
+
+<section class="light">
+ <div class="wrap">
+  <div class="num">04</div>
+  <h2>What happens next</h2>
+  <div class="next">
+   <div class="nc"><div class="s">STEP 1</div><h3>Short call</h3><p>15 minutes on your ideal client, deal size, current CRM and what counts as a qualified call for your sales team.</p></div>
+   <div class="nc"><div class="s">STEP 2</div><h3>Access</h3><p>Google Ads (or a new account under your ownership), Google Tag Manager, GA4 and read access to the CRM stage used for qualified calls.</p></div>
+   <div class="nc"><div class="s">STEP 3</div><h3>First week</h3><p>Tracking and form qualification live, keyword and negative lists signed off with you, campaigns built and ready for launch in week two.</p></div>
+  </div>
+ </div>
+</section>
+
+<div class="cta">
+ <div class="wrap">
+  <h2>Let's have a quick call</h2>
+  <p>Reply to my message with a time that suits you.</p>
+ </div>
+</div>
+
+<footer><div class="wrap"><b>Usman Gull</b>, Google Ads and SEO Specialist</div></footer>
+
+</body>
+</html>
